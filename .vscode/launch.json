@@ -1,0 +1,20 @@
+{
+  "configurations": [
+    {
+      "name": "Debug with ST-Link",
+      "cwd": "${workspaceFolder}",
+      "executable": "${command:cmake.launchTargetPath}",
+      "request": "launch",
+      "type": "cortex-debug",
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none",
+      "servertype": "stlink",
+      "armToolchainPath": "",
+      "gdbPath": "gdb",
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 4
+      }
+    }
+  ]
+}

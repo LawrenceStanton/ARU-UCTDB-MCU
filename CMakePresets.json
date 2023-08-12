@@ -1,0 +1,42 @@
+{
+  "version": 6,
+  "cmakeMinimumRequired": {
+    "major": 3,
+    "minor": 25
+  },
+  "configurePresets": [
+    {
+      "name": "arm-none-eabi",
+      "displayName": "ARM GCC Cross Compilation",
+      "description": "Cross compile for ARM Embedded Processors",
+      "generator": "Unix Makefiles",
+      "hidden": true,
+      "cacheVariables": {
+        "CMAKE_EXPORT_COMPILE_COMMANDS": "ON"
+      },
+      "warnings": {},
+      "toolchainFile": "CMake/arm-none-eabi.cmake",
+      "binaryDir": "Build/ARM"
+    },
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "description": "Target Embedded Device with Debugging options.",
+      "inherits": ["arm-none-eabi"],
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "Debug"
+      },
+      "binaryDir": "Build/App/Debug"
+    }
+  ],
+  "buildPresets": [
+    {
+      "name": "Debug",
+      "displayName": "Debug",
+      "description": "Target Embedded Device with Debugging options.",
+      "configurePreset": "Debug",
+      "jobs": 12,
+      "verbose": false
+    }
+  ]
+}
