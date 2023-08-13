@@ -8,3 +8,6 @@ Build
 !.vscode/extensions.json
 
 CMakeUserPresets.json
+
+.mxproject
+CubeMX/Makefile
