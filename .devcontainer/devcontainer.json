@@ -1,0 +1,39 @@
+// For format details, see https://aka.ms/devcontainer.json. For config options, see the
+// README at: https://github.com/devcontainers/templates/tree/main/src/cpp
+{
+  "name": "C++",
+  "build": {
+    "dockerfile": "Dockerfile"
+  },
+
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "dan-c-underwood.arm",
+        "pierre-payen.gdb-syntax",
+        "ZixuanWang.linkerscript",
+        "IBM.output-colorizer",
+        "mcu-debug.peripheral-viewer",
+        "ms-vscode.vscode-serial-monitor",
+        "ms-vscode.cpptools-extension-pack",
+        "matepek.vscode-catch2-test-adapter",
+        "xaver.clang-format",
+        "mcu-debug.debug-tracker-vscode",
+        "marus25.cortex-debug",
+        "marus25.cortex-debug-dp-stm32f1",
+        "ms-vscode.vscode-embedded-tools",
+        "github.vscode-github-actions",
+        "ms-vscode.hexeditor",
+        "ms-vscode.makefile-tools",
+        "ms-vsliveshare.vsliveshare",
+        "mcu-debug.rtos-views",
+        "esbenp.prettier-vscode",
+        "mcu-debug.memory-view",
+        "ms-azuretools.vscode-docker",
+        "jeff-hykin.better-cpp-syntax",
+        "streetsidesoftware.code-spell-checker",
+        "trond-snekvik.gnu-mapfiles"
+      ]
+    }
+  }
+}
