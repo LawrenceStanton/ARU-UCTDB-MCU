@@ -1,6 +1,24 @@
 {
   "configurations": [
     {
+      "name": "Debug with OpenOCD",
+      "cwd": "${workspaceFolder}",
+      "executable": "${command:cmake.launchTargetPath}",
+      "request": "launch",
+      "type": "cortex-debug",
+      "servertype": "openocd",
+      "configFiles": ["openocd.cfg"],
+      "runToEntryPoint": "main",
+      "showDevDebugOutput": "none",
+      "armToolchainPath": "",
+      "serverpath": "openocd",
+      "gdbPath": "gdb",
+      "liveWatch": {
+        "enabled": true,
+        "samplesPerSecond": 4
+      }
+    },
+    {
       "name": "Debug with ST-Link",
       "cwd": "${workspaceFolder}",
       "executable": "${command:cmake.launchTargetPath}",
