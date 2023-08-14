@@ -22,4 +22,5 @@ public:
 	virtual optional<Register> write(MemoryAddress memoryAddress, Register data) noexcept override final;
 
 	TC74_I2C(I2C_HandleTypeDef &hi2c, DeviceAddress deviceAddress) noexcept;
+	virtual ~TC74_I2C() noexcept = default;
 };

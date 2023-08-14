@@ -14,6 +14,7 @@ using Register		= TC74::I2C::Register;
 using MemoryAddress = TC74::I2C::MemoryAddress;
 
 optional<Register> TC74_I2C::read(MemoryAddress memoryAddress) noexcept {
+	static_assert(sizeof(Register) == sizeof(uint8_t));
 	uint8_t data = 0;
 
 	auto status = HAL_I2C_Mem_Read(
@@ -26,11 +27,11 @@ optional<Register> TC74_I2C::read(MemoryAddress memoryAddress) noexcept {
 		100
 	);
 	if (status != HAL_OK) return nullopt;
-
-	return Register(data);
+	else return Register(data);
 }
 
 optional<Register> TC74_I2C::write(MemoryAddress memoryAddress, Register data) noexcept {
+	static_assert(sizeof(Register) == sizeof(uint8_t));
 	auto status = HAL_I2C_Mem_Write(
 		&this->hi2c, //
 		static_cast<uint8_t>(this->deviceAddress) << 1,
@@ -41,8 +42,7 @@ optional<Register> TC74_I2C::write(MemoryAddress memoryAddress, Register data) n
 		100
 	);
 	if (status != HAL_OK) return nullopt;
-
-	return Register(data);
+	else return data;
 }
 
 TC74_I2C::TC74_I2C(I2C_HandleTypeDef &hi2c, DeviceAddress deviceAddress) noexcept
