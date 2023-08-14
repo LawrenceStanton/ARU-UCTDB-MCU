@@ -45,5 +45,4 @@ optional<Register> TC74_I2C::write(MemoryAddress memoryAddress, Register data) n
 	else return data;
 }
 
-TC74_I2C::TC74_I2C(I2C_HandleTypeDef &hi2c, DeviceAddress deviceAddress) noexcept
-	: hi2c(hi2c), deviceAddress(deviceAddress) {}
+TC74_I2C::TC74_I2C(I2C_HandleTypeDef &hi2c, DeviceAddress deviceAddress) noexcept : hi2c(hi2c), I2C(deviceAddress) {}

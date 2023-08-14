@@ -14,8 +14,7 @@
 
 class TC74_I2C : public TC74::I2C {
 private:
-	I2C_HandleTypeDef  &hi2c;
-	const DeviceAddress deviceAddress;
+	I2C_HandleTypeDef &hi2c;
 
 public:
 	virtual optional<Register> read(MemoryAddress memoryAddress) noexcept override final;
