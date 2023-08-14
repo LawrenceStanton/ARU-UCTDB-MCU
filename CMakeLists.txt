@@ -64,6 +64,10 @@ if(CMAKE_CROSSCOMPILING)
 	)
 endif()
 
+if(NOT CMAKE_CROSSCOMPILING)
+	enable_testing()
+endif()
+
 add_subdirectory(Modules)
 
 if(CMAKE_CROSSCOMPILING)
