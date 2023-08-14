@@ -17,11 +17,7 @@
     "github.vscode-github-actions",
     "ms-vscode.hexeditor",
     "trond-snekvik.gnu-mapfiles",
-    "ms-vsliveshare.vsliveshare",
     "ms-vscode.makefile-tools",
-    "ibm.output-colorizer",
-    "mcu-debug.peripheral-viewer",
-    "esbenp.prettier-vscode",
-    "ms-vscode.vscode-serial-monitor"
+    "ibm.output-colorizer"
   ]
 }
