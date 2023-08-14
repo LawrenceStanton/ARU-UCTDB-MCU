@@ -6,6 +6,16 @@
   },
   "configurePresets": [
     {
+      "name": "Server",
+      "displayName": "Build Server",
+      "description": "Minimal build configuration for Build Server",
+      "generator": "Unix Makefiles",
+      "cacheVariables": {
+        "CMAKE_BUILD_TYPE": "RelWithDebInfo"
+      },
+      "binaryDir": "Build/Server"
+    },
+    {
       "name": "arm-none-eabi",
       "displayName": "ARM GCC Cross Compilation",
       "description": "Cross compile for ARM Embedded Processors",
@@ -31,12 +41,34 @@
   ],
   "buildPresets": [
     {
+      "name": "Server",
+      "displayName": "Server",
+      "description": "Configuration for building tests on minimal build server.",
+      "configurePreset": "Server",
+      "cleanFirst": false,
+      "verbose": false
+    },
+    {
       "name": "Debug",
       "displayName": "Debug",
       "description": "Target Embedded Device with Debugging options.",
       "configurePreset": "Debug",
       "jobs": 12,
       "verbose": false
+    }
+  ],
+  "testPresets": [
+    {
+      "name": "Server",
+      "displayName": "Server Side Tests",
+      "description": "Remote Testing on Build Server",
+      "configurePreset": "Server",
+      "output": {
+        "outputOnFailure": true
+      },
+      "execution": {
+        "stopOnFailure": true
+      }
     }
   ]
 }

@@ -62,8 +62,11 @@ if(CMAKE_CROSSCOMPILING)
 		LINKER:--print-memory-usage
 		LINKER:--no-warn-rwx-segment # Workaround — Something isn't right in ST's startup code.
 	)
+endif()
 
-	add_subdirectory(Modules)
+add_subdirectory(Modules)
+
+if(CMAKE_CROSSCOMPILING)
 	add_subdirectory(Lib)
 	
 	set(APPLICATION_INCLUDE_DIRECTORIES
@@ -94,6 +97,7 @@ if(CMAKE_CROSSCOMPILING)
 
 	target_link_libraries(${TARGET_EXECUTABLE} PRIVATE
 		STM32CubeF0_HAL
+		TC74_Lib
 	)
 
 	target_link_options(${TARGET_EXECUTABLE} PRIVATE
